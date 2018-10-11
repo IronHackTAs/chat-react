@@ -10,7 +10,7 @@ export class ProjectEdit extends React.Component {
         };
     }
 
-    submitForm = e => {
+    submitForm() {
         axios.put(`http://localhost:3000/api/projects/${this.props._id}`, this.state)
             .then( () => {
                 if(this.props.onProjectChanged){
@@ -29,7 +29,7 @@ export class ProjectEdit extends React.Component {
                 <input type="text" value={title} onChange={e=> this.setState({title:e.currentTarget.value})}/>
                 <label>Description</label>
                 <input type="text" value={description} onChange={e=> this.setState({description:e.currentTarget.value})}/>
-                <button onClick={this.submitForm}>Edit this project</button>
+                <button onClick={this.submitForm.bind(this)}>Edit this project</button>
             </div>
         );
     }
