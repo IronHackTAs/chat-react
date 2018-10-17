@@ -1,6 +1,7 @@
 import React from 'react';
 import io from 'socket.io-client';
 import './chat.css';
+import environment from "../../.env.development";
 
 
 export class Chat extends React.Component{
@@ -14,7 +15,7 @@ export class Chat extends React.Component{
     }
 
     componentDidMount(){
-        this.socket = io('localhost:3000');
+        this.socket = io(process.env.REACT_APP_API_URL);
 
         this.socket.on('message', (msg)=> {
             this.receiveMessage(msg.msg);
