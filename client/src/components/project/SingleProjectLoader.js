@@ -19,7 +19,7 @@ export class SingleProjectLoader extends Component {
 
     getProject(){
         let {_id} = this.state.project;
-        let url = `http://localhost:3000/api/projects/${_id}`;
+        let url = `http://localhost:3010/api/projects/${_id}`;
         console.log(url);
         axios.get(url)
              .then(res => {

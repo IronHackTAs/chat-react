@@ -11,7 +11,7 @@ export class ProjectEdit extends React.Component {
     }
 
     submitForm() {
-        axios.put(`http://localhost:3000/api/projects/${this.props._id}`, this.state)
+        axios.put(`http://localhost:3010/api/projects/${this.props._id}`, this.state)
             .then( () => {
                 if(this.props.onProjectChanged){
                     this.props.onProjectChanged();

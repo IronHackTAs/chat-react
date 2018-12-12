@@ -17,7 +17,7 @@ export class ListProjectLoader extends Component {
     }
 
     refetchAll(){
-        let url = `http://localhost:3000/api/projects/`;
+        let url = `http://localhost:3010/api/projects/`;
         console.log(url);
         axios.get(url)
              .then(res => {

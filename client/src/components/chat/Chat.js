@@ -15,7 +15,7 @@ export class Chat extends React.Component{
     }
 
     componentDidMount(){
-        this.socket = io(process.env.REACT_APP_API_URL);
+        this.socket = io('http://localhost:3010 ');
 
         this.socket.on('message', (msg)=> {
             this.receiveMessage(msg.msg);
